@@ -12,7 +12,6 @@ function App() {
       <Navbar />
       <Profile />
       <Footer />
-      test3
     </div>
   );
 }
