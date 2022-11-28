@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Profile />
       <Footer />
-      test
+      test2
     </div>
   );
 }
