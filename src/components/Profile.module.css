@@ -1,0 +1,13 @@
+.content {
+  grid-area: c;
+  background-color: aquamarine;
+}
+
+.content img {
+  height: 300px;
+}
+
+.item {
+  padding: 10px;
+  color: green;
+}
