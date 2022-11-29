@@ -4,21 +4,12 @@
   margin: 0 auto;
 
   grid-template-areas:
-  "h h "
-  "n c";
+    "h h "
+    "n c";
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   /* grid-gap: 10px; */
-}
-
-
-
-
-
-
-.content img {
-  height: 300px;
 }
 
 .footer {
