@@ -3,30 +3,35 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./Dialogs.module.css";
 
+const DialogItem = (props) => {
+  let path = "/dialogs/" + props.id;
+  return (
+    <div className={styles.dialog}>
+      <NavLink to={path}>{props.name}</NavLink>
+    </div>
+  );
+};
+
+const Message = (props) => {
+  return (
+    <div className={styles.message}>{props.message}</div>
+  )
+}
+
 const Dialogs = () => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
-        <div className={styles.dialog + " " + styles.active}>
-          <NavLink to="/dialogs/1">Имя1</NavLink>
-        </div>
-        <div className={styles.dialog}>
-          {" "}
-          <NavLink to="/dialogs/2">Имя2</NavLink>
-        </div>
-        <div className={styles.dialog}>
-          {" "}
-          <NavLink to="/dialogs/3">Имя3</NavLink>
-        </div>
-        <div className={styles.dialog}>
-          {" "}
-          <NavLink to="/dialogs/4">Имя4</NavLink>
-        </div>
+        <DialogItem name="Name1" id="888" />
+        <DialogItem name="Name2" id="777" />
+        <DialogItem name="Name3" id="666" />
+        <DialogItem name="Name4" id="555" />
+        <DialogItem name="Name5" id="444" />
       </div>
       <div className={styles.messages}>
-        <div className={styles.message}>Hi</div>
-        <div className={styles.message}>How is your learn?</div>
-        <div className={styles.message}>Yo</div>
+        <Message message='test message'/>
+        <Message message='test message2'/>
+        <Message message='test message3'/>
       </div>
     </div>
   );
