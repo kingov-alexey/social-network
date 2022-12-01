@@ -20,7 +20,5 @@
 .app-wrapper-content {
 
   grid-area: c;
-  background-color: aquamarine;
-
-
+  background-color: gray;
 }
