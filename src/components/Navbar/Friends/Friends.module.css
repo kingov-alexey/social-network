@@ -1,0 +1,18 @@
+.wrap{
+  display: flex;
+  padding-top: 50px;
+}
+
+.title{
+  font-size: 30px;
+}
+
+.ava{
+
+}
+.ava img{
+  height: 20px;
+  width: 20px;
+}
+
+

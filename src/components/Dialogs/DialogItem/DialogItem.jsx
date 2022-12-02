@@ -9,6 +9,7 @@ const DialogItem = props => {
   let path = '/dialogs/' + props.id;
   return (
     <div className={styles.dialog}>
+      <img src={props.ava} alt="" />
       <NavLink to={path}>{props.name}</NavLink>
     </div>
   );
