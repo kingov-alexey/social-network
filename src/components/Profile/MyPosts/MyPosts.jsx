@@ -1,10 +1,9 @@
-import React from 'react';
-import styles from './MyPosts.module.css';
-import Post from './Post/Post';
+import React from "react";
+import styles from "./MyPosts.module.css";
+import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-
-  let postsElements = props.posts.map(p => {
+  let postsElements = props.posts.map((p) => {
     return <Post message={p.message} likeCount={p.likeCount} />;
   });
 
@@ -19,7 +18,7 @@ const MyPosts = (props) => {
           <button>Add post</button>
         </div>
       </div>
-      <div className=''>{postsElements}</div>
+      <div className="">{postsElements}</div>
     </div>
   );
 };
