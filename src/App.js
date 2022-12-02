@@ -16,7 +16,10 @@ function App(props) {
         <div className='app-wrapper-content'>
           <Routes>
             <Route path="/dialogs/*" element={<Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData}/>} />
+            {/* Вариант 1 с учетом изменений в роут теперь сразу можно пропсы прокинуть */}
             <Route path="/profile" element={<Profile posts={props.posts}/>} />
+            {/* Вариант 2 на 2022 почему то не работает */}
+            {/* <Route path="/profile" render={() => <Profile posts={props.posts}/>} /> */}
           </Routes>
         </div>
         <Footer />
