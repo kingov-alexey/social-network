@@ -6,19 +6,19 @@ const Friends = (props) => {
     <div className={styles.wrap}>
       <div className={styles.title}>Friends</div>
       <div>
-        <div className={styles.ava}>
+        <div className={styles.avatar}>
           <img
             src="https://sovietgames.su/wp-content/uploads/2016/07/%D0%90%D0%B2%D0%B0%D1%82%D0%B0%D1%80%D0%BA%D0%B0.jpg"
             alt=""
           />
         </div>
-        <div className={styles.ava}>
+        <div className={styles.avatar}>
           <img
             src="https://sovietgames.su/wp-content/uploads/2016/07/%D0%90%D0%B2%D0%B0%D1%82%D0%B0%D1%80%D0%BA%D0%B0.jpg"
             alt=""
           />
         </div>
-        <div className={styles.ava}>
+        <div className={styles.avatar}>
           <img
             src="https://sovietgames.su/wp-content/uploads/2016/07/%D0%90%D0%B2%D0%B0%D1%82%D0%B0%D1%80%D0%BA%D0%B0.jpg"
             alt=""
