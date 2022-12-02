@@ -7,7 +7,7 @@ import Profile from './components/Profile/Profile';
 import Footer from './components/Footer/Footer';
 import Dialogs from './components/Dialogs/Dialogs';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -15,8 +15,8 @@ function App() {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path="/dialogs/*" element={<Dialogs/>} />
-            <Route path="/profile" element={<Profile/>} />
+            <Route path="/dialogs/*" element={<Dialogs messagesData={props.messagesData} dialogsData={props.dialogsData}/>} />
+            <Route path="/profile" element={<Profile posts={props.posts}/>} />
           </Routes>
         </div>
         <Footer />
