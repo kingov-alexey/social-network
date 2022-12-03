@@ -14,13 +14,11 @@ function App(props) {
       <Navbar state={props.sidebar} />
       <div className='app-wrapper-content'>
         <Routes>
+          <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage} />} />
           <Route
-            path="/dialogs/*"
-            element={<Dialogs
-              state={props.state.dialogsPage} />} />
-          <Route
-            path="/profile"
-            element={<Profile state={props.state.profilePage} />} />
+            path='/profile'
+            element={<Profile state={props.state.profilePage} addPost={props.addPost} />}
+          />
         </Routes>
       </div>
       <Footer />
