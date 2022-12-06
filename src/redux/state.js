@@ -77,10 +77,9 @@ let store = {
     },
   },
   getState() {
-    return this._state
-
+    return this._state;
   },
-  rerenderEntireTree() {
+  _callSubscriber() {
     console.log('state was changed');
   },
   addPost() {
@@ -91,17 +90,17 @@ let store = {
     };
     this._state.profilePage.posts.push(newPost);
     this._state.profilePage.newPostText = '';
-    this.rerenderEntireTree(this._state);
+    this._callSubscriber(this._state);
   },
 
   updateNewPostText(newText) {
     this._state.profilePage.newPostText = newText;
-    this.rerenderEntireTree(this._state);
+    this._callSubscriber(this._state);
   },
   subscribe(observer) {
-    this.rerenderEntireTree = observer; // observer // publisher-subscriber // наблюдатель // button.addEventListener // onChange // onClick
+    this._callSubscriber = observer; // observer // publisher-subscriber // наблюдатель // button.addEventListener // onChange // onClick
   },
-}
+};
 
 export default store;
 window.store = store;
