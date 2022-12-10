@@ -1,7 +1,7 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-const SEND_MESSAGE = 'SEND_MESSAGE';
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reducer';
+import sidebarReducer from './sidebar-reducer';
+
 let store = {
   _state: {
     profilePage: {
@@ -10,7 +10,7 @@ let store = {
         { id: 2, message: 'post 2 test message2', likeCount: 22 },
         { id: 3, message: 'post 3 test message3', likeCount: 33 },
       ],
-      newPostText: 'it-kamasutra.comsss',
+      newPostText: 'it-kamasutra.com',
     },
     dialogsPage: {
       dialogs: [
@@ -91,51 +91,13 @@ let store = {
   },
 
   dispatch(action) {
-    // (type: 'ADD_POST')
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 555,
-        message: this._state.profilePage.newPostText,
-        likeCount: 0,
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.profilePage.newPostText = action.newText;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-      this._state.dialogsPage.newMessageBody = action.body;
-      this._callSubscriber(this._state);
-    } else if (action.type === SEND_MESSAGE) {
-      let body = this._state.dialogsPage.newMessageBody;
-      this._state.dialogsPage.newMessageBody = '';
-      this._state.dialogsPage.messages.push({ id: 777, message: body });
-      this._callSubscriber(this._state);
-    }
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+    this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+    this._callSubscriber(this._state);
   },
 };
-
-//развернутый вариант
-// export const addPostActionCreator = () => {
-//   return {
-//     type: ADD_POST,
-//   };
-// };
-// по ес6 отрефакторинговый вариант
-export const addPostActionCreator = () => ({ type: ADD_POST });
-
-export const updateNewPostTextActionCreator = text => ({
-  type: UPDATE_NEW_POST_TEXT,
-  newText: text,
-});
-
-export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
-
-export const updateNewMessageBodyCreator = body => ({
-  type: UPDATE_NEW_MESSAGE_BODY,
-  body: body,
-});
 
 export default store;
 window.store = store;
