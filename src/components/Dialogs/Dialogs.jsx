@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { updateNewMessageBodyCreator, sendMessageCreator } from './../../redux/dialogs-reducer';
 
 const Dialogs = props => {
   let state = props.dialogsPage;
